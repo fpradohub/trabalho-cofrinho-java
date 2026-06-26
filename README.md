@@ -1,52 +1,48 @@
-# Cofrinho de Moedas - Programação Orientada a Objetos (Java)
+# Trabalho de POO: Cofrinho de Moedas em Java
 
-Este é um projeto acadêmico desenvolvido em Java como parte do curso de **Análise e Desenvolvimento de Sistemas (UNINTER)**. O sistema simula um cofrinho de moedas no terminal, permitindo a adição, remoção e listagem de moedas de diferentes nacionalidades, além de calcular o valor total convertido para Reais (BRL).
-
----
-
-## 🛠️ Tecnologias Utilizadas
-* **Linguagem:** Java (JDK 11 ou superior)
-* **Paradigma:** Programação Orientada a Objetos (POO)
-* **IDE Recomendada:** Eclipse, IntelliJ IDEA ou VS Code
+Projeto em console desenvolvido para a matéria de Programação Orientada a Objetos no curso de Análise e Desenvolvimento de Sistemas (UNINTER). É um simulador simples de cofrinho no terminal para praticar os conceitos fundamentais de POO em Java.
 
 ---
 
-## 💡 Conceitos de POO Demonstrados
-O projeto foi desenvolvido com foco na aplicação prática dos pilares da Programação Orientada a Objetos:
-
-1. **Abstração:** Representada pela classe abstrata `Moeda`, que define a estrutura comum para qualquer tipo de moeda (atributo `valor` e método abstrato `converter()`).
-2. **Herança:** As moedas específicas (`Real`, `Dolar` e `Euro`) estendem a classe abstrata `Moeda`, herdando seus comportamentos e atributos básicos.
-3. **Polimorfismo:** 
-   * O método `converter()` é implementado individualmente por cada moeda, aplicando sua própria taxa de conversão.
-   * O `Cofrinho` gerencia um `ArrayList<Moeda>` e percorre a lista chamando o método de conversão de forma genérica, sem precisar saber o tipo exato da moeda em tempo de execução.
-4. **Encapsulamento:** Organização lógica em pacotes (`empresa`) e delegação de responsabilidades de cada classe de maneira isolada e segura.
+## O que o projeto faz
+* Permite adicionar e remover moedas de Real, Dólar e Euro.
+* Lista as moedas atualmente guardadas no cofrinho.
+* Calcula o total do cofrinho convertido para Real (BRL) usando taxas de câmbio fixas definidas no código.
 
 ---
 
-## 📥 Como Rodar o Projeto
+## Como o código está estruturado (POO)
+O projeto foi pensado para aplicar na prática os pilares de POO:
+* **Classe Abstrata (`Moeda`):** Define a base com o atributo `valor` e o método `converter()`.
+* **Herança:** As classes `Real`, `Dolar` e `Euro` estendem a classe `Moeda`.
+* **Polimorfismo:** A conversão de moeda (`converter()`) e o método `toString()` são sobrescritos nas classes filhas. O cofrinho gerencia tudo dinamicamente usando um `ArrayList<Moeda>` e chamando os métodos de forma genérica.
+* **Tratamento de Exceções:** Menu interativo no terminal feito com `Scanner` tratando entradas inválidas para evitar travamentos do programa.
+
+---
+
+## Como rodar o programa
 
 ### Pré-requisitos
-Certifique-se de ter o **Java JDK** instalado e configurado nas suas variáveis de ambiente.
+* Java JDK instalado (versão 11 ou superior).
 
-### Execução via Terminal
-1. Clone o repositório ou baixe os arquivos.
-2. Navegue até a pasta `src` do projeto:
+### Passo a passo no terminal
+1. Entre na pasta `src/` do projeto:
    ```bash
    cd src
    ```
-3. Compile as classes do pacote `empresa`:
+2. Compile as classes do pacote:
    ```bash
    javac empresa/*.java
    ```
-4. Execute a classe principal:
+3. Execute o programa:
    ```bash
    java empresa.Principal
    ```
 
 ---
 
-## 🖥️ Exemplo de Uso
-Ao iniciar o programa, o seguinte menu interativo será exibido no console:
+## Exemplo de uso no terminal
+Ao iniciar o programa, um menu interativo será exibido no console:
 
 ```text
 Menu
@@ -56,8 +52,3 @@ Menu
 4 - Calcular total convertido para Real
 0 - Encerrar
 ```
-
-Você poderá escolher depositar ou retirar moedas nas seguintes opções de moeda:
-* **Dólar (USD)**
-* **Euro (EUR)**
-* **Real (BRL)**
